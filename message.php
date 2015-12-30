@@ -1,6 +1,17 @@
 <?php
 require 'PHPMailer/PHPMailerAutoload.php';
 
+/*
+    config.inc.php must define:
+
+    $messageHost  =  hostname of our email->MMS gateway
+                     (string)
+    $emailMap     =  maps E.164 phone number to destination email address
+                     (associative array, string -> string)
+    $forwardMap   =  maps email address to an array of E.164 phone numbers
+                     to forward the message to
+                     (associative array, string -> array(strings))
+*/
 include 'config.inc.php';
 
 header('Content-type: text/xml');
